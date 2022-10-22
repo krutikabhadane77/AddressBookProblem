@@ -7,32 +7,41 @@ public class AddressBookMain {
         System.out.println("Welcome to Address Book Program");
         AddressBook addressBook = new AddressBook();
 
-        System.out.println("Enter the contact details.............");
-        System.out.println("Enter the first name:");
-        String firstName = sc.next();
-        System.out.println("Enter the last name:");
-        String lastName = sc.next();
-        System.out.println("Enter the address:");
-        String address = sc.next();
-        System.out.println("Enter the city:");
-        String city = sc.next();
-        System.out.println("Enter the state:");
-        String state = sc.next();
-        System.out.println("Enter the zip code:");
-        String zip = sc.next();
-        System.out.println("Enter the phone no:");
-        String phoneNumber = sc.next();
-        System.out.println("Enter the email:");
-        String email = sc.next();
-        Details d = new Details(firstName, lastName, address, city, state, email, phoneNumber, zip);
+        boolean flag = true;
 
-        ArrayList<Details> contactList = addressBook.contactList(d);
-        for(Details contact:contactList){
-            System.out.println(contact.getFirstName()+" "+contact.getLastName()+" "+contact.getAddress()+" "+contact.getCity()+
-                    " "+contact.getState()+" "+contact.getEmail()+" "+contact.getPhoneNumber()+" "+contact.getZip());
+        while(flag) {
+
+            System.out.println("1.Add Contact");
+            System.out.println("2.Edit Contact");
+            System.out.println("3.Exit");
+            System.out.println("Enter Choice: ");
+
+            int option = sc.nextInt();
+
+            switch (option)
+            {
+                case 1:
+                    addressBook.addContact();
+                    break;
+
+                case 2:
+                    System.out.println("Enter the Person First name to edit details: ");
+                    String person_name = sc.next();
+
+                    boolean b = addressBook.editContact(person_name);
+                    if (b == true) {
+                        System.out.println("Details Updated");
+                    } else {
+                        System.out.println("Contact Not Found");
+                    }
+                    break;
+
+                case 3:
+                    flag =false;
+                    break;
+
+            }
         }
 
-
     }
-
 }
