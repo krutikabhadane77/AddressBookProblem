@@ -7,14 +7,22 @@ public class AddressBook {
     public ArrayList<Details> contactList = new ArrayList<>();
 
     public void addContact(){
-        System.out.println("Enter the contact details:");
+        System.out.println("Enter the contact details.....");
+        System.out.println("Enter the first name: ");
         String firstName = sc.next();
+        System.out.println("Enter the last name: ");
         String lastName = sc.next();
+        System.out.println("Enter the address: ");
         String address = sc.next();
+        System.out.println("Enter the city: ");
         String city = sc.next();
+        System.out.println("Enter the state: ");
         String state = sc.next();
+        System.out.println("Enter the zip code: ");
         String zip = sc.next();
+        System.out.println("Enter the email: ");
         String email = sc.next();
+        System.out.println("Enter the phone no: ");
         String phoneNumber = sc.next();
 
         Details contactDetails = new Details(firstName, lastName, address, city, state, zip, email, phoneNumber);
@@ -99,4 +107,19 @@ public class AddressBook {
         }
         return flag == 1;
     }
+    public boolean deleteContact(String name) {
+        int flag = 0;
+        for(Details contact: contactList)
+        {
+            if(contact.getFirstName().equals(name))
+            {
+                contactList.remove(contact);
+                flag = 1;
+                break;
+            }
+        }
+        return flag == 1;
+    }
+
+
 }
