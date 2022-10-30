@@ -12,9 +12,10 @@ public class AddressBookMain {
         while(flag) {
 
             System.out.println("1.Add Contact");
-            System.out.println("2.Edit Contact");
-            System.out.println("3.Delete Contact");
-            System.out.println("4.Exit");
+            System.out.println("2.Display Contact");
+            System.out.println("3.Edit Contact");
+            System.out.println("4.Delete Contact");
+            System.out.println("5.Exit");
             System.out.println("Enter Choice: ");
 
             int option = sc.nextInt();
@@ -25,7 +26,11 @@ public class AddressBookMain {
                     addressBook.addContact();
                     break;
 
-                case 2:
+                case  2:
+                    addressBook.displayRecord();
+                    break;
+
+                case 3:
                     System.out.println("Enter the Person First name to edit details: ");
                     String person_name = sc.next();
 
@@ -37,7 +42,7 @@ public class AddressBookMain {
                     }
                     break;
 
-                case 3:
+                case 4:
                     System.out.println("Enter the Contact to be deleted:");
                     String firstName = sc.next();
                     boolean listDeleted = addressBook.deleteContact(firstName);
@@ -48,7 +53,7 @@ public class AddressBookMain {
                     }
                     break;
 
-                case 4:
+                case 5:
                     flag =false;
                     break;
 

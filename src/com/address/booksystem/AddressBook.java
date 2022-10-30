@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class AddressBook {
     public static Scanner sc = new Scanner(System.in);
-    public ArrayList<Details> contactList = new ArrayList<>();
+    public ArrayList<personDetails> contactList = new ArrayList<personDetails>();
 
     public void addContact(){
         System.out.println("Enter the contact details.....");
@@ -25,15 +25,28 @@ public class AddressBook {
         System.out.println("Enter the phone no: ");
         String phoneNumber = sc.next();
 
-        Details contactDetails = new Details(firstName, lastName, address, city, state, zip, email, phoneNumber);
-        contactList.add(contactDetails);
+        contactList.add(new personDetails(firstName,lastName,address,city,state,zip,email,phoneNumber));
+
+    }
+
+    public void displayRecord()
+    {
+        if (contactList.isEmpty())
+        {
+            System.out.println("No Records!!!");
+        }
+        else {
+            for (personDetails contact : contactList) {
+                System.out.println(contact);
+            }
+        }
 
     }
 
     public boolean editContact(String Name)
     {
         int flag = 0;
-        for(Details contact: contactList)
+        for(personDetails contact: contactList)
         {
             if(contact.getFirstName().equals(Name))
             {
@@ -109,7 +122,7 @@ public class AddressBook {
     }
     public boolean deleteContact(String name) {
         int flag = 0;
-        for(Details contact: contactList)
+        for(personDetails contact: contactList)
         {
             if(contact.getFirstName().equals(name))
             {

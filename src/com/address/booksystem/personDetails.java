@@ -1,6 +1,6 @@
 package com.address.booksystem;
 
-public class Details {
+public class personDetails {
     private String firstName;
     private String lastName;
     private String address;
@@ -10,19 +10,18 @@ public class Details {
     private String email;
     private String phoneNumber ;
 
-    public Details(String firstName, String lastName, String address, String city, String state, String email, String phoneNumber, String zip) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setAddress(address);
-        setCity(city);
-        setState(state);
-        setEmail(email);
-        setPhoneNumber(phoneNumber);
-        setZip(zip);
-
+    public personDetails(String firstName, String lastName, String address, String city, String state, String zip,String email, String phoneNumber) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.address=address;
+        this.city=city;
+        this.state=state;
+        this.zip=zip;
+        this.email=email;
+        this.phoneNumber=phoneNumber;
     }
 
-       public String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -84,5 +83,19 @@ public class Details {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "personDetails{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 }
