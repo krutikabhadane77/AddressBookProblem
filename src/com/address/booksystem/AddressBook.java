@@ -134,5 +134,24 @@ public class AddressBook {
         return flag == 1;
     }
 
-
+    public boolean checkExists(String name)
+    {
+        int flag=0;
+        for (personDetails contact: contactList)
+        {
+            if (contact.getFirstName().equals(name))
+            {
+                flag=1;
+                break;
+            }
+        }
+        if (flag==1)
+        {
+            return true;
+        }
+        return false;
+    }
 }
+
+
+
