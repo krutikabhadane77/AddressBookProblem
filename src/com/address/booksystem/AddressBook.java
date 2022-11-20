@@ -8,8 +8,21 @@ public class AddressBook {
 
     public void addContact(){
         System.out.println("Enter the contact details.....");
-        System.out.println("Enter the first name: ");
-        String firstName = sc.next();
+        int i = 0;
+        String firstName=null;
+        while (i == 0){
+            System.out.println("Enter the first name: ");
+            firstName = sc.next();
+            if (checkExists(firstName)){
+                System.out.println("Name already exists..");
+            }
+            else {
+                i = 1;
+            }
+        }
+
+
+
         System.out.println("Enter the last name: ");
         String lastName = sc.next();
         System.out.println("Enter the address: ");
