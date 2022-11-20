@@ -168,7 +168,7 @@ public class AddressBook {
     public void sortPersonDetails() {
         int i = 0;
         while (i == 0) {
-            System.out.println("Person details sort by :\n" + "1. City\n" + "2. State");
+            System.out.println("Person details sort by :\n" + "1. City\n" + "2. State\n" + "3. Name");
 
             int ch = sc.nextInt();
             switch (ch) {
@@ -179,6 +179,9 @@ public class AddressBook {
                     Sort.sortPersonByState(contactList);
                     break;
                 case 3:
+                    Sort.sortByPersonName(contactList);
+                    break;
+                case 4:
                     i=1;
                     break;
                 default:

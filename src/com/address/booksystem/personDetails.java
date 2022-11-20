@@ -114,5 +114,12 @@ public class personDetails {
 
             return state1.compareToIgnoreCase(state2);
     };
+
+    public static Comparator<personDetails> firstNameSorting = (p1,p2)-> {
+        String fname1 = p1.getFirstName();
+        String fname2 = p2.getFirstName();
+
+        return fname1.compareToIgnoreCase(fname2);
+    };
 }
 
