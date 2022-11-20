@@ -121,5 +121,12 @@ public class personDetails {
 
         return fname1.compareToIgnoreCase(fname2);
     };
+
+    public static Comparator<personDetails> zipSorting = (p1,p2)-> {
+        String zip1 = p1.getZip();
+        String zip2 = p2.getZip();
+
+        return zip1.compareToIgnoreCase(zip2);
+    };
 }
 

@@ -56,4 +56,13 @@ public class Sort {
             System.out.println(p);
         }
     }
+
+    public static void sortByZip(List<personDetails> person)
+    {
+        Collections.sort(person, personDetails.zipSorting);
+        for(personDetails p: person)
+        {
+            System.out.println(p);
+        }
+    }
 }
