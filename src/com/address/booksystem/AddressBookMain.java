@@ -15,7 +15,8 @@ public class AddressBookMain {
             System.out.println("2.Display Contact");
             System.out.println("3.Edit Contact");
             System.out.println("4.Delete Contact");
-            System.out.println("5.Exit");
+            System.out.println("5.Sort Person details");
+            System.out.println("6.Exit");
             System.out.println("Enter Choice: ");
 
             int option = sc.nextInt();
@@ -54,11 +55,14 @@ public class AddressBookMain {
                     break;
 
                 case 5:
+                    addressBook.sortPersonDetails();
+                    break;
+
+                case 6:
                     flag =false;
                     break;
 
             }
         }
-
     }
 }
