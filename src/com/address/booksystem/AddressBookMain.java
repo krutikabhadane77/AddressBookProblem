@@ -24,7 +24,6 @@ public class AddressBookMain {
             {
                 case 1:
                     addressBook.addContact();
-
                     break;
 
                 case  2:
