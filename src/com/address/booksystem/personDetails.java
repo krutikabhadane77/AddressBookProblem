@@ -1,5 +1,7 @@
 package com.address.booksystem;
 
+import java.util.Comparator;
+
 public class personDetails {
     private String firstName;
     private String lastName;
@@ -98,4 +100,25 @@ public class personDetails {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+     public static Comparator<personDetails> citySorting = new Comparator<personDetails>() {
+            @Override
+            public int compare(personDetails p1, personDetails p2) {
+                String city1 = p1.getCity();
+                String city2 = p2.getCity();
+
+                return city1.compareToIgnoreCase(city2);
+            }
+        };
+
+    public static Comparator<personDetails> stateSorting = new Comparator<personDetails>() {
+        @Override
+        public int compare(personDetails p1, personDetails p2) {
+            String state1 = p1.getState();
+            String state2 = p2.getState();
+
+            return state1.compareToIgnoreCase(state2);
+        }
+    };
 }
+
