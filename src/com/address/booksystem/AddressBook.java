@@ -165,19 +165,25 @@ public class AddressBook {
         return false;
     }
 
-    public void sortPersonDetails(){
-        System.out.println("Person details sort by :\n"+"1. City\n"+"2. State");
+    public void sortPersonDetails() {
+        int i = 0;
+        while (i == 0) {
+            System.out.println("Person details sort by :\n" + "1. City\n" + "2. State");
 
-        int ch = sc.nextInt();
-        switch (ch){
-            case 1:
-                Sort.sortPersonByCity(contactList);
-                break;
-            case 2:
-                Sort.sortPersonByState(contactList);
-                break;
-            default:
-                System.out.println("Enter valid option....");
+            int ch = sc.nextInt();
+            switch (ch) {
+                case 1:
+                    Sort.sortPersonByCity(contactList);
+                    break;
+                case 2:
+                    Sort.sortPersonByState(contactList);
+                    break;
+                case 3:
+                    i=1;
+                    break;
+                default:
+                    System.out.println("Enter valid option....");
+            }
         }
     }
 }
