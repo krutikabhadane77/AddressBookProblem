@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Sort {
     public static void sortPersonByCity(List<personDetails> person) {
-        // Collections.sort(person, personDetails.citySorting);
+        Collections.sort(person, personDetails.citySorting);
         List<personDetails> matches = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter city to search: ");
@@ -28,6 +28,7 @@ public class Sort {
     }
 
     public static void sortPersonByState(List<personDetails> person) {
+        Collections.sort(person, personDetails.stateSorting);
         List<personDetails> matches = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter state to search: ");
@@ -44,6 +45,15 @@ public class Sort {
                 System.out.println(p);
         } else {
             System.out.println("Match not found");
+        }
+    }
+
+    public static void sortByPersonName(List<personDetails> person)
+    {
+        Collections.sort(person, personDetails.firstNameSorting);
+        for(personDetails p: person)
+        {
+            System.out.println(p);
         }
     }
 }
