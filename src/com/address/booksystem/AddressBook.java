@@ -1,10 +1,37 @@
 package com.address.booksystem;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class AddressBook {
     public static Scanner sc = new Scanner(System.in);
     public ArrayList<personDetails> contactList = new ArrayList<personDetails>();
+
+    public void writeData() {
+        StringBuffer empBuffer = new StringBuffer();
+        contactList.forEach(employee -> {
+            String employeeDataString = employee.toString().concat("\n");
+            empBuffer.append(employeeDataString);
+        });
+        try {
+            Files.write(Paths.get("addressBook-file.txt"), empBuffer.toString().getBytes());
+
+        } catch (IOException e) {
+
+        }
+    }
+
+    public void readData() {
+        try {
+            Files.lines(new File("addressBook-file.txt").toPath()).map(line -> line.trim()).forEach(line -> System.out.println(line));
+
+        } catch (IOException e) {
+
+        }
+    }
 
     public void addContact(){
         System.out.println("Enter the contact details.....");
