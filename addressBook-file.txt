@@ -1,0 +1,1 @@
+personDetails{firstName='kruti', lastName='patil', address='abc', city='colony', state='maharashtra', zip='789', email='k@g,ail.com', phoneNumber='567890'}

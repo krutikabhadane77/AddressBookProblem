@@ -59,6 +59,12 @@ public class AddressBookMain {
                     break;
 
                 case 6:
+                    addressBook.writeData();
+                    break;
+                case 7:
+                    addressBook.readData();
+                    break;
+                case 8:
                     flag =false;
                     break;
 
